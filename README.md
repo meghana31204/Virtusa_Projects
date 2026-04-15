@@ -2,7 +2,7 @@ Virtusa Projects Repository
 
 This repository contains projects developed using Java, Python, and SQL.
 
-Java Project: Banking Simulation System
+---> Java Project: Banking Simulation System
 
 A console-based banking application.
 
@@ -13,7 +13,7 @@ User authentication
 Basic input validation
 OOP concepts
 
-Python Project: Fare Calculation System
+---> Python Project: Fare Calculation System
 
 A Python application to calculate ride fare based on distance, vehicle type, and peak hour surge pricing.
 
@@ -23,7 +23,7 @@ Fare calculation using functions
 Surge pricing logic
 Input validation
 
-SQL Project: Online Retail Sales Analysis
+---> SQL Project: Online Retail Sales Analysis
 
 Designed a database and wrote SQL queries to analyze sales data.
 
