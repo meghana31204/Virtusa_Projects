@@ -160,7 +160,7 @@ public class Banking_Simulation {
             System.out.println("Invalid Account Type");
             return;
         }
-        System.out.print("Enter you Age: ");
+        System.out.print("Enter your Age: ");
         int age=o.nextInt();
         System.out.print("Enter your Gender \n 1. Female \n 2. Male \n 3. Other \n");
         int ngender=o.nextInt();
