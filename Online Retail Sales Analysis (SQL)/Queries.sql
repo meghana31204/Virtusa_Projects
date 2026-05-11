@@ -10,9 +10,9 @@ order by total_sold desc;
 ---Identify most valuable customers
 
 select o.customer_id, sum(p.price * oi.quantity) as total_spent
-from orders o, order_items oi, products p
-where o.order_id = oi.order_id
-and oi.product_id = p.product_id
+from orders o
+join order_items oi on o.order_id = oi.order_id
+join products p on oi.product_id = p.product_id
 group by o.customer_id;
 
 
@@ -20,9 +20,9 @@ group by o.customer_id;
 
 select extract(month from order_date) as month,
 sum(p.price * oi.quantity) as revenue
-from orders o, order_items oi, products p
-where o.order_id = oi.order_id
-and oi.product_id = p.product_id
+from orders o
+join order_items oi on o.order_id = oi.order_id
+join products p on oi.product_id = p.product_id
 group by extract(month from order_date);
 
 
