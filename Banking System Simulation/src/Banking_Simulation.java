@@ -41,7 +41,7 @@ class CurrentAccount extends Account {
     }
 }
 class User {
-    String name, dob, username, gender, email, accountNumber;
+    String name, dob, username, gender, email;
     private String password;
     int age;
     long mobile;
@@ -50,7 +50,7 @@ class User {
 
     public User(String name, String dob, String username, String password,
                 Account account, int age, String gender, long mobile,
-                String email, String accountNumber) {
+                String email) {
 
         this.name = name;
         this.dob = dob;
@@ -61,13 +61,13 @@ class User {
         this.gender = gender;
         this.mobile = mobile;
         this.email = email;
-        this.accountNumber = accountNumber;
     }
 
     public String getPassword() {
         return password;
     }
 }
+
 class Transaction {
     String type;
     double amount;
@@ -90,7 +90,6 @@ public class Banking_Simulation {
         System.out.print("Enter You DOB (DD/MM/YYYY): ");
         String dob=o.next();
         String username;
-        double balance;
         while (true){
             System.out.print("Enter Username: ");
             username=o.next();
@@ -129,11 +128,9 @@ public class Banking_Simulation {
             if (!length) {
                 System.out.println("Password must be at least 8 characters");
             }
-
             if (!uppercase) {
                 System.out.println("Add at least one uppercase letter");
             }
-
             if (!lowercase) {
                 System.out.println("Add at least one lowercase letter");
             }
@@ -160,7 +157,8 @@ public class Banking_Simulation {
             type="Current";
         }
         else{
-            System.out.println("Enter valid number");
+            System.out.println("Invalid Account Type");
+            return;
         }
         System.out.print("Enter you Age: ");
         int age=o.nextInt();
@@ -177,7 +175,8 @@ public class Banking_Simulation {
             gender="Other";
         }
         else{
-            System.out.println("Enter valid number");
+            System.out.println("Invalid Number");
+            return;
         }
 
         System.out.print("Enter Mobile Number: ");
@@ -198,13 +197,11 @@ public class Banking_Simulation {
             acc = new CurrentAccount(deposit);
         }
 
-        String accountNumber = "ACC" + System.currentTimeMillis();
 
         User u = new User(name, dob, username, password,
-                acc, age, gender, mobile, email, accountNumber);
+                acc, age, gender, mobile, email);
         users.put(username, u);
         System.out.println("------Account Created Successfully-----");
-        System.out.println("Account Number : " + accountNumber);
         System.out.println("Name           : " + name);
         System.out.println("Account Type   : " + type);
         System.out.println("Balance        : " + deposit);
